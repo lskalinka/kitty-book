@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 50px 100px;
+}
+
+.header__list-links {
+  list-style: "\1F63C";
+}
+
+.header__link {
+  text-decoration: none;
+}
+
+.header__link:hover {
+  opacity: 0.8;
+}
+
+.header__heading {
+  font-family: "Cat";
+  font-size: 65px;
+}
+.randomiser {
+  display: flex;
+  justify-content: center;
+}
+.randomiser__text {
+  padding: 20px 0 40px;
+}
