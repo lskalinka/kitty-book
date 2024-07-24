@@ -10,38 +10,48 @@
   <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
   <title>Книжка-котишка</title>
 </head>
-<body>
-  <header class="header">
+<body class="page">
+  <header class="header section">
     <h1 class="header__heading">Книжка-котишка</h1>
     <nav class="header__menu">
       <ul class="header__list-links">
         <li><a class="header__link" href="#random-button">Рандомный текст</a></li>
-        <li><a class="header__link" href="#book-button">Почитать всю книгу</a></li>
         <li><a class="header__link" href="#about">Кто автор?</a></li>
       </ul>
     </nav>
+    <div class="header__themetoggle">
+      <div class="header__toggler">
+        <img class="rope">
+        <section class="stage">
+          <figure class="ball">
+            <div class="ball-inner">
+              <span class="theme-img front"></span>
+              <span class="theme-img back"></span>
+            </div>
+            <span class="shadow"></span>
+          </figure>
+        </section>
+      </div>
+      <div class="header__kitty"></div>
+    </div>
   </header>
-  <main class="main">
-    <section class="randomiser">
+  <main class="main section">
+    <section class="randomiser section">
       <div class="randomiser__block">
         <p class="randomiser__text" id="text">Кот тихонечко пищит,<br>Потому что life is shit.</p>
         <button class="randomiser__button" type="button" id="random-button">Другой случайный текст</button>
       </div>
     </section>
-    <section class="book">
-      <h2>Вся книжка</h2>
-      <button type="button" id="book-button">Почитать<img alt="Новая вкладка"></button>
-    </section>
-    <section class="about" id="about">
+    <section class="about section" id="about">
       <h2 class="about__heading">Что за книжка?</h2>
       <p>Это книжка про кошек, котов, котиков, котишек и совсем маленьких котят. А еще про снокотов — это как сноволк, только снокот. Если вы не знаете про сноволков, посмотрите мультик Wolfwalkers, он очень милый.</p>
       <p>Автор — Лина Калинка.</p>
-      <a href="https://t.me/+WEMW1BhVMoF7Y6y-">Телеграм-канал со стихами</a>
+      <a href="https://t.me/+lgJx15ACYaZjY2Vi">Телеграм-канал со стихами</a>
     </section>
   </main>
-  <footer class="footer">
-    <p></p>
-    <p></p>
+  <footer class="footer section">
+    <p>2024</p>
+    <p>Lina Kalinka</p>
   </footer>
   <script src="./scripts.js"></script>
 </body>

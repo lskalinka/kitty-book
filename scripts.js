@@ -1,8 +1,5 @@
-let texts = [
-  '1',
-  '2',
-  '3'
-];
+//рандомайзер текстов по клику на кнопку
+let texts = [];
 
 
 function getRandomElement(arr) {
@@ -24,28 +21,55 @@ fetch('texts.txt')
   texts = data.split(/\n\n\n/);
 });
 
+//смена темы
+document.addEventListener('DOMContentLoaded', function () {
+  const themeImgFront = document.querySelector('.theme-img.front');
+  const themeImgBack = document.querySelector('.theme-img.back');
+  const ball = document.querySelector('.ball');
 
+  function toggleRotation() {
+    ball.classList.toggle('rotated');
+  }
 
-
-// Подключение к Google Drive API
-gapi.client.load('drive', 'v3', () => {
-  // Запрос на загрузку текста из Google-документа
-  gapi.client.drive.files.export({
-    fileId: '1Mx7S3CttoFEIULEPtBBAvXcWcJDgweQiAdqQfPC1x-E',
-    mimeType: 'text/plain'
-  })
-  .then(response => {
-    var text = response.body;
-    // Создание локального текстового файла
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', 'texts.txt');
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-  })
-  .catch(err => {
-    console.error('Error loading text from Google Doc', err);
+  themeImgFront.addEventListener('click', function(event) {
+    event.stopPropagation();
+    toggleRotation();
   });
+
+  themeImgBack.addEventListener('click', function(event) {
+    event.stopPropagation();
+    toggleRotation();
+  });
+
+  ball.addEventListener('click', function(event) {
+    event.stopPropagation();
+    toggleRotation();
+  });
+
+  document.querySelector('.stage').addEventListener('click', function(event) {
+    toggleRotation();
+  });
+
+  // Функция для обновления background в зависимости от класса rotated
+  function updateBackground() {
+    if (ball.classList.contains('rotated')) {
+      ball.classList.add('rotated-state');
+    } else {
+      ball.classList.remove('rotated-state');
+    }
+  }
+
+  // Вызываем функцию updateBackground при загрузке страницы, чтобы установить правильный фон
+  updateBackground();
 });
+
+
+
+
+
+
+
+
+
+
+
