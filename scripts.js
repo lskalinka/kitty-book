@@ -22,46 +22,43 @@ fetch('texts.txt')
 });
 
 //смена темы
-document.addEventListener('DOMContentLoaded', function () {
-  const themeImgFront = document.querySelector('.theme-img.front');
-  const themeImgBack = document.querySelector('.theme-img.back');
-  const ball = document.querySelector('.ball');
 
-  function toggleRotation() {
-    ball.classList.toggle('rotated');
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  const globeWorldmapFront = document.querySelector('.globe-worldmap-front');
+  let currentPosition = 0;
+  const step = 200; // Шаг перемещения в пикселях, 1/4 ширины изображения
+  const totalWidth = 800; // Общая ширина изображения (4 шага по 200px)
 
-  themeImgFront.addEventListener('click', function(event) {
-    event.stopPropagation();
-    toggleRotation();
-  });
+  // Устанавливаем начальную позицию
+  globeWorldmapFront.style.transform = `translateX(${currentPosition}px)`;
 
-  themeImgBack.addEventListener('click', function(event) {
-    event.stopPropagation();
-    toggleRotation();
-  });
+  document.querySelector('.globe').addEventListener('click', function() {
+    // Увеличиваем текущее смещение на шаг
+    currentPosition -= step;
 
-  ball.addEventListener('click', function(event) {
-    event.stopPropagation();
-    toggleRotation();
-  });
-
-  document.querySelector('.stage').addEventListener('click', function(event) {
-    toggleRotation();
-  });
-
-  // Функция для обновления background в зависимости от класса rotated
-  function updateBackground() {
-    if (ball.classList.contains('rotated')) {
-      ball.classList.add('rotated-state');
-    } else {
-      ball.classList.remove('rotated-state');
+    // Проверяем, не превысили ли мы ширину изображения
+    if (currentPosition <= -totalWidth) {
+      currentPosition = 0; // Если да, возвращаемся в начало
     }
-  }
 
-  // Вызываем функцию updateBackground при загрузке страницы, чтобы установить правильный фон
-  updateBackground();
+    // Применяем новое положение
+    globeWorldmapFront.style.transform = `translateX(${currentPosition}px)`;
+  });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
