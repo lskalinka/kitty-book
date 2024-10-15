@@ -78,89 +78,11 @@
   align-items: center;
 }
 
-.globe-container,
-.globe {
-	width: 200px;
-	height: 200px;
-}
-.globe-container {
-	position: relative;
-	display: inline-block;
-	margin: 30px;
-	transform: scale(1.1);
-}
-.globe {
-	position: relative;
-	display: block;
-	margin: 0;
-	padding: 0;
-	top: 0;
-	left: 0;
-}
-.globe-worldmap,
-.globe-worldmap-front,
-.globe-worldmap-back,
-.globe-sphere,
-.globe-inner-shadow {
-	position: absolute;
-	display: block;
-	margin: 0;
-}
-.globe-sphere,
-.globe-inner-shadow {
-	left: 0;
-	top: 0;
-	width: 200px;
-	height: 200px;
-	background-position: 0 0;
-	background-repeat: no-repeat;
-}
-
-.globe-inner-shadow {
-  background-image: url('../images/shadow.svg')
-}
-
-.globe-worldmap {
-	left: 0;
-	top: 0;
-	width: 200px;
-	height: 200px;
-	overflow: hidden;
-	border-radius: 50%;
-}
-.globe-worldmap-front,
-.globe-worldmap-back {
-	left: 0;
-	top: 0;
-	width: 840px;
-	height: 200px;
-	overflow: visible;
-	background-repeat: no-repeat;
-  background-size: 800px 200px;
-}
-
-.globe-worldmap-front {
-	background-position: 0px 0px;
-	/* animation: textureSpin 2s linear infinite; */
-  	background-image: url('../images/Без\ имени-1.png');
-    transform: translateX(0);
-    transition: transform 2s ease;
-}
-
-
-@keyframes textureSpin {
-	from {
-		transform: translateX(0);
-	}
-	to {
-        transform: translateX(-25%);
-	}
-}
-@keyframes textureSpinreverse {
-	from {
-        transform: translateX(-47.5%);
-	}
-	to {
-		transform: translateX(0);
-	}
+@keyframes ball {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
 }
