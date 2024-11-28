@@ -245,7 +245,7 @@
   object-fit: contain;
   top: 15%;
   left: 10px;
-  background-image: url('/images/kitty.png');
+  background-image: url('../images/kitty.png');
 background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -255,7 +255,7 @@ transition: background-image 0.2s ease, left 0.3s linear both;
 }
 
 .kitty:hover {
-  background-image: url('/images/kittypaw.png');
+  background-image: url('../images/kittypaw.png');
   left: 8px;
   transition: background-image 0.2s ease, left 0.3s linear both;
 }
