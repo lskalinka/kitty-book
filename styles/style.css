@@ -256,6 +256,6 @@ transition: background-image 0.2s ease, left 0.3s linear both;
 
 .kitty:hover {
   background-image: url('../images/kittypaw.png');
-  left: 8px;
+  left: 7px;
   transition: background-image 0.2s ease, left 0.3s linear both;
 }
