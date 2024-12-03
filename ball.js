@@ -99,7 +99,6 @@ class Sphere {
     startAnimation() {
         if (this.isAnimating) return; // Если анимация уже идет, выходим
         this.isAnimating = true; // Устанавливаем флаг анимации
-        kitty.style.backgroundImage = "url('../images/kitty.png')"; // Устанавливаем изображение kitty
         kitty.style.left = '10px'; // Возврат к исходной позиции перед анимацией
 
         this.currentAngle += 360; // Увеличиваем текущий угол
