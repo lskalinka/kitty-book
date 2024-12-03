@@ -71,37 +71,30 @@ class Sphere {
     }
 
     attachHoverEvents() {
-        const defaultKittyImage = '../images/kitty.png';
-        const hoverKittyImage = '../images/kittypaw.png';
-
-        const setKittyBackground = (image) => {
-            kitty.style.backgroundImage = `url('${image}')`;
-        };
-
         kitty.addEventListener('mouseenter', () => {
             if (!this.isAnimating) {
-                setKittyBackground(hoverKittyImage);
+                kitty.style.backgroundImage = "url('../images/kittypaw.png')";
                 kitty.style.left = '7px'; // Изменение позиции при наведении
             }
         });
 
         kitty.addEventListener('mouseleave', () => {
             if (!this.isAnimating) {
-                setKittyBackground(defaultKittyImage);
+                kitty.style.backgroundImage = "url('../images/kitty.png')";
                 kitty.style.left = '10px'; // Возврат к исходной позиции
             }
         });
 
         this.parts.sphere.addEventListener('mouseenter', () => {
             if (!this.isAnimating) {
-                setKittyBackground(hoverKittyImage);
+                kitty.style.backgroundImage = "url('../images/kittypaw.png')";
                 kitty.style.left = '7px'; // Изменение позиции при наведении
             }
         });
 
         this.parts.sphere.addEventListener('mouseleave', () => {
             if (!this.isAnimating) {
-                setKittyBackground(defaultKittyImage);
+                kitty.style.backgroundImage = "url('../images/kitty.png')";
                 kitty.style.left = '10px'; // Возврат к исходной позиции
             }
         });
@@ -112,26 +105,32 @@ class Sphere {
         this.isAnimating = true; // Устанавливаем флаг анимации
         kitty.style.backgroundImage = "url('../images/kitty.png')"; // Устанавливаем изображение kitty
         kitty.style.left = '10px'; // Возврат к исходной позиции перед анимацией
+
         this.currentAngle += 360; // Увеличиваем текущий угол
         this.parts.sphere.style.transition = `transform ${this.rotationTime / 4000}s linear`;
         this.parts.line.style.transition = `transform ${this.rotationTime / 4000}s linear`; // Добавляем переход для line
+
         // Сначала перемещение вправо на 80 пикселей и подъем на 8 пикселей
         this.parts.sphere.style.transform = `translate(80px, -8px) rotateY(${this.currentAngle}deg)`;
         this.parts.line.style.transform = `rotate(${-55}deg) translateY(27px)`;
+
         // Используем setTimeout для плавного перехода на следующую анимацию
         setTimeout(() => {
             this.currentAngle += 200; // Увеличиваем текущий угол
             this.parts.sphere.style.transform = `translate(0, 0) rotateY(${this.currentAngle}deg)`;
             this.parts.line.style.transform = `rotate(${0}deg) translateY(0)`;
+
             setTimeout(() => {
                 this.currentAngle += 180; // Увеличиваем текущий угол
                 this.parts.sphere.style.transform = `translate(-45px, -6px) rotateY(${this.currentAngle}deg)`;
                 this.parts.line.style.transform = `rotate(${34}deg) translateY(15px)`;
+
                 // Добавляем перемещение вправо на 10 пикселей перед возвратом
                 setTimeout(() => {
                     this.currentAngle += 100; // Увеличиваем текущий угол
                     this.parts.sphere.style.transform = `translate(25px, -2px) rotateY(${this.currentAngle}deg)`;
                     this.parts.line.style.transform = `rotate(${-17}deg) translateY(6px)`;
+
                     // Возвращаем обратно на исходные координаты
                     setTimeout(() => {
                         this.currentAngle += 60; // Увеличиваем текущий угол
