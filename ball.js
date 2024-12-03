@@ -1,5 +1,14 @@
 const line = document.querySelector('#line');
 const kitty = document.querySelector('.kitty');
+const images = [
+  '../images/kitty.png',
+  '../images/kittypaw.png',
+];
+
+images.forEach((src) => {
+  const img = new Image();
+  img.src = src;
+});
 
 class Sphere {
     constructor({
