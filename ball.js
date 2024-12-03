@@ -73,28 +73,24 @@ class Sphere {
     attachHoverEvents() {
         kitty.addEventListener('mouseenter', () => {
             if (!this.isAnimating) {
-                kitty.style.backgroundImage = "url('../images/kittypaw.png')";
                 kitty.style.left = '7px'; // Изменение позиции при наведении
             }
         });
 
         kitty.addEventListener('mouseleave', () => {
             if (!this.isAnimating) {
-                kitty.style.backgroundImage = "url('../images/kitty.png')";
                 kitty.style.left = '10px'; // Возврат к исходной позиции
             }
         });
 
         this.parts.sphere.addEventListener('mouseenter', () => {
             if (!this.isAnimating) {
-                kitty.style.backgroundImage = "url('../images/kittypaw.png')";
                 kitty.style.left = '7px'; // Изменение позиции при наведении
             }
         });
 
         this.parts.sphere.addEventListener('mouseleave', () => {
             if (!this.isAnimating) {
-                kitty.style.backgroundImage = "url('../images/kitty.png')";
                 kitty.style.left = '10px'; // Возврат к исходной позиции
             }
         });
@@ -148,15 +144,12 @@ class Sphere {
     updateKittyState() {
         if (this.isAnimating) {
             // Если анимация идет, kitty в обычном состоянии
-            kitty.style.backgroundImage = "url('../images/kitty.png')";
             kitty.style.left = '10px'; // Возврат к исходной позиции
         } else {
             // Если анимация не идет, проверяем состояние ховера
             if (this.parts.sphere.matches(':hover') || kitty.matches(':hover')) {
-                kitty.style.backgroundImage = "url('../images/kittypaw.png')";
                 kitty.style.left = '7px'; // Изменение позиции при наведении
             } else {
-                kitty.style.backgroundImage = "url('../images/kitty.png')";
                 kitty.style.left = '10px'; // Возврат к исходной позиции
             }
         }

@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 30px;
   padding: 0 5vw;
-  background-image: url(../images//photo-1583339824000-5afecfd41835.avif);
+  background-image: url(../images/photo-1583339824000-5afecfd41835.avif);
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
@@ -245,6 +245,7 @@
   object-fit: contain;
   top: 15%;
   left: 10px;
+  background-image: url('../images/kitty.png');
 background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -254,6 +255,7 @@ transition: background-image 0.2s ease, left 0.3s linear both;
 }
 
 .kitty:hover {
+  background-image: url('../images/kittypaw.png');
   left: 7px;
   transition: background-image 0.2s ease, left 0.3s linear both;
 }
