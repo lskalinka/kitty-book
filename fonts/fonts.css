@@ -4,3 +4,10 @@
     url(./Cats.woff2) format('woff2');
   font-weight: normal;
 }
+
+@font-face {
+  font-family: Arsenal;
+  src:
+    url(./ArsenalSC-Regular.woff2) format('woff2');
+  font-weight: normal;
+}

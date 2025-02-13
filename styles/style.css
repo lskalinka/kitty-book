@@ -153,7 +153,7 @@
   text-align: center;
   text-transform: uppercase;
   transition: opacity 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-  opacity: 1; /* Установим здесь */
+  opacity: 1;
 }
 .icon {
   position: absolute;
@@ -163,13 +163,13 @@
   height: 100%;
   text-align: center;
   width: 28%;
-  transition: width .25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: width 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .fa {
   height: 36px;
   margin: auto;
   vertical-align: middle;
-  transition: transform .25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: transform 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .randomiser__button:hover .icon .fa {
   transform: scale(1.5) translateY(-3px);
@@ -245,17 +245,17 @@
   object-fit: contain;
   top: 15%;
   left: 10px;
-  background-image: url('../images/kitty.png');
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-align-self: flex-end;
-z-index: 2;
-transition: background-image 0.2s ease, left 0.3s linear both;
+  background-image: url("../images/kitty.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-self: flex-end;
+  z-index: 2;
+  transition: background-image 0.2s ease, left 0.3s linear both;
 }
 
 .kitty:hover {
-  background-image: url('../images/kittypaw.png');
+  background-image: url("../images/kittypaw.png");
   left: 7px;
   transition: background-image 0.2s ease, left 0.3s linear both;
 }
