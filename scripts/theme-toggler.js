@@ -1,5 +1,6 @@
 const line = document.querySelector('#line');
 const kitty = document.querySelector('.kitty');
+kitty.style.backgroundImage = "url('./images/kitty.png')";
 
 
 class Sphere {
