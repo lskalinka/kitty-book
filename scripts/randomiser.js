@@ -79,5 +79,5 @@ button.addEventListener('click', function () {
     // Удаляем выданный элемент из массива невыданных
     remainingTexts.splice(randomIndex, 1);
     textElement.textContent = randomElement; // Отображаем случайный элемент
-  }, 3250); // Время должно совпадать с длительностью анимации
+  }, 1250); // Время должно совпадать с длительностью анимации
 });
