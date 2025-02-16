@@ -67,40 +67,61 @@ class Sphere {
         return polygon;
     }
 
+    renderSphere() {
+      let sphere = this.createSphereElement();
+      for (let m = 0; m < ((this.polygonsPerMeridian - 1) * 2); m++) {
+          let meridian = this.createMeridianElement();
+          for (let p = 0; p < this.polygonsPerMeridian; p++) {
+              let polygon = this.createPolygonElement(m, p);
+              this.parts.polygons.push(polygon);
+              meridian.appendChild(polygon);
+              sphere.appendChild(meridian);
+          }
+      }
+      this.container.appendChild(sphere);
+      this.attachClickEvent(sphere);
+  }
+
+  setTexture(texture) {
+      this.parts.polygons.forEach(item => item.style.backgroundImage = `url('${texture}')`);
+  }
+
+  attachHoverEvents() {
+    kitty.addEventListener('mouseenter', () => {
+        if (!this.isAnimating) {
+            kitty.style.backgroundImage = "url('./images/kittypaw.png')";
+            kitty.style.left = '7px'; // Изменение позиции при наведении
+        }
+    });
+
+    kitty.addEventListener('mouseleave', () => {
+        if (!this.isAnimating) {
+            kitty.style.backgroundImage = "url('./images/kitty.png')";
+            kitty.style.left = '10px'; // Возврат к исходной позиции
+        }
+    });
+
+    this.parts.sphere.addEventListener('mouseenter', () => {
+        if (!this.isAnimating) {
+            kitty.style.backgroundImage = "url('./images/kittypaw.png')";
+            kitty.style.left = '7px'; // Изменение позиции при наведении
+        }
+    });
+
+    this.parts.sphere.addEventListener('mouseleave', () => {
+        if (!this.isAnimating) {
+            kitty.style.backgroundImage = "url('./images/kitty.png')";
+            kitty.style.left = '10px'; // Возврат к исходной позиции
+        }
+    });
+}
+
     attachClickEvent(sphere) {
         sphere.addEventListener("click", () => this.startAnimation());
         kitty.addEventListener("click", () => this.startAnimation());
     }
 
-    attachHoverEvents() {
-        kitty.addEventListener('mouseenter', () => {
-            if (!this.isAnimating) {
-                kitty.style.backgroundImage = "url('./images/kittypaw.png')";
-                kitty.style.left = '7px'; // Изменение позиции при наведении
-            }
-        });
 
-        kitty.addEventListener('mouseleave', () => {
-            if (!this.isAnimating) {
-                kitty.style.backgroundImage = "url('./images/kitty.png')";
-                kitty.style.left = '10px'; // Возврат к исходной позиции
-            }
-        });
-
-        this.parts.sphere.addEventListener('mouseenter', () => {
-            if (!this.isAnimating) {
-                kitty.style.backgroundImage = "url('./images/kittypaw.png')";
-                kitty.style.left = '7px'; // Изменение позиции при наведении
-            }
-        });
-
-        this.parts.sphere.addEventListener('mouseleave', () => {
-            if (!this.isAnimating) {
-                kitty.style.backgroundImage = "url('./images/kitty.png')";
-                kitty.style.left = '10px'; // Возврат к исходной позиции
-            }
-        });
-    }
 
     startAnimation() {
         if (this.isAnimating) return; // Если анимация уже идет, выходим
@@ -164,24 +185,7 @@ class Sphere {
         }
     }
 
-    renderSphere() {
-        let sphere = this.createSphereElement();
-        for (let m = 0; m < ((this.polygonsPerMeridian - 1) * 2); m++) {
-            let meridian = this.createMeridianElement();
-            for (let p = 0; p < this.polygonsPerMeridian; p++) {
-                let polygon = this.createPolygonElement(m, p);
-                this.parts.polygons.push(polygon);
-                meridian.appendChild(polygon);
-                sphere.appendChild(meridian);
-            }
-        }
-        this.container.appendChild(sphere);
-        this.attachClickEvent(sphere);
-    }
 
-    setTexture(texture) {
-        this.parts.polygons.forEach(item => item.style.backgroundImage = `url('${texture}')`);
-    }
 }
 
 new Sphere({
