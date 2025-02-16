@@ -78,11 +78,13 @@
 
 .header__list-links {
   list-style: "\1F63C";
+  padding-left: 16px;
 }
 
 .header__link {
   padding-block-start: 2px;
   text-decoration: none;
+  font-size: 20px;
 }
 
 .header__link:hover {
@@ -92,6 +94,10 @@
 .header__heading {
   font-family: "Cat";
   font-size: 65px;
+}
+
+.header__logo {
+  width: 80%;
 }
 
 .randomiser {
@@ -233,7 +239,7 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-  width: 20%;
+  width: 27%;
   position: relative;
   justify-content: space-around;
 }
@@ -258,4 +264,11 @@
   background-image: url("../images/kittypaw.png");
   left: 7px;
   transition: background-image 0.2s ease, left 0.3s linear both;
+}
+
+.header__navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 73%;
 }
