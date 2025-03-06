@@ -1,53 +1,73 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preload" href="../images/kittypaw.png" as="image" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/png" />
+    <title>Книжка-котишка</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./fonts/fonts.css" />
-  <link rel="stylesheet" href="./styles/global.css" />
-  <link rel="stylesheet" href="./styles/style.css"/>
-  <link rel="preload" href="../images/kittypaw.png" as="image">
-  <link rel="shortcut icon" href="./images/favicon.png" type="image/png" />
-  <title>Книжка-котишка</title>
-</head>
-
-<body class="page">
-  <header class="header section">
-    <section class="header__navigation">
-    <img class="header__logo" src="./images/лого.png">
-    <nav class="header__menu">
-      <ul class="header__list-links">
-        <li>
-          <a class="header__link" href="#random-button">Рандомный текст</a>
-        </li>
-        <li><a class="header__link" href="#about">Что за книжка?</a></li>
-      </ul>
-    </nav>
-  </section>
-    <div class="header__themetoggler">
-      <div class="kitty"></div>
-      <div class="toy" id="toy">
-        <div class="sphere" id="ball">
-          <div class="line" id="line"></div>
+  <body class="page">
+    <header class="header section">
+      <section class="header__navigation">
+        <img class="header__logo" src="./images/лого.png" />
+        <nav class="header__menu">
+          <ul class="header__list-links">
+            <li>
+              <a class="header__link link" href="#random-button"
+                >Случайный текст</a
+              >
+            </li>
+            <li>
+              <a class="header__link link" href="#about">Что за книжка?</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <div class="header__themetoggler">
+        <div class="header__kitty"></div>
+        <div class="header__toy">
+          <div class="header__sphere">
+            <div class="header__line"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
-  <main class="main section">
-    <section class="randomiser section">
-      <div class="randomiser__block">
-        <div class="randomiser__text">
-          <p class="text-content"></p>
-        </div>
-        <a class="randomiser__button" href="#" role="button" id="random-button">
-          <p class="randomiser__sign">Другой случайный текст</p>
-          <div class="icon">
-            <svg class="fa" version="1.0" xmlns="http://www.w3.org/2000/svg" width="36px" height="36px"
-              viewBox="0 0 2130 2130" preserveAspectRatio="xMidYMid meet">
-              <g transform="translate(0.000000,2125.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
-                <path d="M11745 21225 c-129 -21 -260 -61 -331 -100 -136 -76 -238 -170 -276
+    </header>
+    <main class="main section">
+      <section class="randomiser section">
+        <div class="randomiser__block">
+          <div class="randomiser__text">
+            <p class="randomiser__text-content"></p>
+          </div>
+          <a
+            class="randomiser__button"
+            href="#"
+            role="button"
+            id="random-button"
+          >
+            <p class="randomiser__sign">Другой случайный текст</p>
+            <div class="randomiser__icon">
+              <svg
+                class="randomiser__update"
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="36px"
+                height="36px"
+                viewBox="0 0 2130 2130"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <g
+                  transform="translate(0.000000,2125.000000) scale(0.100000,-0.100000)"
+                  fill="#000000"
+                  stroke="none"
+                >
+                  <path
+                    d="M11745 21225 c-129 -21 -260 -61 -331 -100 -136 -76 -238 -170 -276
          -253 l-19 -43 25 -43 c14 -23 79 -100 145 -171 67 -71 121 -132 121 -137 0
          -11 2 -11 -500 -13 -576 -2 -1067 -32 -1691 -100 -466 -52 -736 -98 -1014
          -174 -99 -27 -238 -64 -310 -81 -332 -81 -1205 -363 -1452 -469 -420 -180
@@ -81,8 +101,10 @@
          1550 78 l80 -9 -125 -64 c-208 -107 -312 -230 -298 -354 21 -180 246 -320 600
          -372 87 -13 156 -15 298 -11 267 7 334 26 715 202 564 262 1475 728 1687 863
          41 27 65 51 84 86 56 102 26 205 -88 312 -140 131 -939 637 -1423 902 -166 90
-         -211 109 -315 134 -115 27 -434 34 -565 13z" />
-                <path d="M2815 7311 c-41 -18 -78 -59 -110 -120 -41 -81 -2 -177 219 -531 534
+         -211 109 -315 134 -115 27 -434 34 -565 13z"
+                  />
+                  <path
+                    d="M2815 7311 c-41 -18 -78 -59 -110 -120 -41 -81 -2 -177 219 -531 534
          -852 1277 -1802 1885 -2411 179 -178 247 -238 394 -348 98 -73 242 -185 320
          -249 191 -157 386 -303 450 -337 28 -15 140 -85 247 -155 238 -155 348 -216
          651 -364 504 -245 936 -408 1394 -526 609 -158 1315 -249 2065 -267 447 -10
@@ -90,33 +112,50 @@
          16 -590 54 -63 14 -180 34 -260 45 -80 11 -228 32 -330 46 -849 119 -1590 376
          -2350 812 -314 181 -383 225 -576 367 -93 69 -198 140 -233 158 -101 52 -334
          264 -870 793 -400 396 -565 571 -740 790 -318 396 -606 805 -1022 1447 -217
-         336 -241 358 -379 358 -61 0 -97 -6 -125 -19z" />
-              </g>
-            </svg>
-          </div>
-        </a>
-      </div>
-    </section>
-    <section class="about section" id="about">
-      <h2 class="about__heading">Что за книжка?</h2>
-      <p>
-        Это книжка про кошек, котов, котиков, котишек и совсем маленьких
-        котят. А еще про снокотов — это как сноволк, только снокот. Если вы не
-        знаете про сноволков, посмотрите мультик Wolfwalkers, он очень милый.
-      </p>
-      <p>Автор — Лина Калинка.</p>
-      <p>
-        <a href="https://t.me/+lgJx15ACYaZjY2Vi" class="link about-tg">Телеграм-канал</a>
-        с другими стихами (более серьезными)
-      </p>
-    </section>
-  </main>
-  <footer class="footer section">
-    <p>2024</p>
-    <p>Lina Kalinka</p>
-  </footer>
-  <script rel="preload" src="./scripts/theme-toggler.js" as="script" defer></script>
-  <script rel="preload" src="./scripts/randomiser.js" as="script" defer></script>
-</body>
-
+         336 -241 358 -379 358 -61 0 -97 -6 -125 -19z"
+                  />
+                </g>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section class="about section" id="about">
+        <h2 class="about__heading">Что за книжка?</h2>
+        <p>
+          Это книжка про кошек, котов, котиков, котишек и совсем маленьких
+          котят. А еще про снокотов — это как сноволк, только снокот. Если вы не
+          знаете про сноволков, посмотрите мультик Wolfwalkers, он очень милый.
+        </p>
+        <p>Автор — Лина Калинка.</p>
+        <p>
+          <a href="https://t.me/+lgJx15ACYaZjY2Vi" class="link about__link"
+            >Телеграм-канал</a
+          >
+          с другими стихами (более серьезными)
+        </p>
+        <p>
+          <a href="https://github.com/lskalinka/lskalinka" class="link about__link"
+            >Гитхаб</a
+          >
+        </p>
+      </section>
+    </main>
+    <footer class="footer section">
+      <p>2024</p>
+      <p>Lina Kalinka</p>
+    </footer>
+    <script
+      rel="preload"
+      src="./scripts/theme-toggler.js"
+      as="script"
+      defer
+    ></script>
+    <script
+      rel="preload"
+      src="./scripts/randomiser.js"
+      as="script"
+      defer
+    ></script>
+  </body>
 </html>

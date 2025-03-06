@@ -1,5 +1,5 @@
-const line = document.querySelector('#line');
-const kitty = document.querySelector('.kitty');
+const line = document.querySelector('.header__line');
+const kitty = document.querySelector('.header__kitty');
 const kittypawimg = "url('./images/kittypaw.png')"
 kitty.style.backgroundImage = "url('./images/kitty.png')";
 
@@ -190,7 +190,7 @@ class Sphere {
 }
 
 new Sphere({
-    container: document.getElementById("ball"),
+    container: document.querySelector('.header__sphere'),
     radius: 30,
     polygonsPerMeridian: 14,
     texture: "./images/sphere_texture.png",

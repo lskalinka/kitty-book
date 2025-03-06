@@ -12,6 +12,15 @@
   inline-size: 100vw;
 }
 
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 10px 0;
+  inline-size: 90vw;
+}
+
 .link {
   position: relative;
   text-decoration: none;
@@ -32,39 +41,6 @@
 .link:hover::before {
   bottom: 0;
   height: 100%;
-}
-
-.section {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 10px 0;
-  inline-size: 90vw;
-}
-
-.header::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -10%;
-  width: 30%;
-  border-bottom: 5px double rgba(126, 141, 153, 1);
-}
-
-.randomiser::after {
-  content: "";
-  position: absolute;
-  bottom: -10%;
-  left: 0;
-  width: 30%;
-  border-bottom: 5px double rgba(126, 141, 153, 1);
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
 }
 
 .header {
@@ -100,10 +76,35 @@
   width: 80%;
 }
 
+.header::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -10%;
+  width: 30%;
+  border-bottom: 5px double rgba(126, 141, 153, 1);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 .randomiser {
   display: flex;
   justify-content: center;
 }
+
+.randomiser::after {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  width: 30%;
+  border-bottom: 5px double rgba(126, 141, 153, 1);
+}
+
 .randomiser__block {
   display: flex;
   flex-direction: column;
@@ -137,6 +138,8 @@
   height: 70%;
   opacity: 1;
   background-color: black;
+  transition-delay: 0.15s;
+  transition: left 0.15s ease, opacity 0.15s ease;
 }
 .randomiser__button.hide-after::after {
   left: -72%;
@@ -158,10 +161,11 @@
   line-height: 30px;
   text-align: center;
   text-transform: uppercase;
-  transition: opacity 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition: opacity 0.15s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  transition-delay: 0.15s;
   opacity: 1;
 }
-.icon {
+.randomiser__icon {
   position: absolute;
   top: 0;
   right: 0;
@@ -171,30 +175,30 @@
   width: 28%;
   transition: width 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
-.fa {
+.randomiser__update {
   height: 36px;
   margin: auto;
   vertical-align: middle;
   transition: transform 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
-.randomiser__button:hover .icon .fa {
+.randomiser__button:hover .randomiser__icon .randomiser__update {
   transform: scale(1.5) translateY(-3px);
 }
 .randomiser__button:hover .randomiser__sign {
   left: -72%;
   opacity: 0;
 }
-.randomiser__button:hover .icon {
+.randomiser__button:hover .randomiser__icon {
   width: 100%;
 }
-.icon.rotate {
+.randomiser__icon.rotate {
   transform: rotate(360deg);
   transition: transform 1.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
-.icon.hover .fa {
+.randomiser__icon.hover .randomiser__update {
   transform: scale(1.5) translateY(-3px);
 }
-.icon.hover {
+.randomiser__icon.hover {
   width: 100%;
 }
 .randomiser__text {
@@ -214,7 +218,7 @@
   max-block-size: 250px;
 }
 
-.line {
+.header__line {
   position: absolute;
   top: -165%;
   justify-self: center;
@@ -223,11 +227,11 @@
   background-color: black;
 }
 
-.toy {
+.header__toy {
   height: 200px;
 }
 
-.sphere {
+.header__sphere {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -239,12 +243,12 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-  width: 27%;
+  width: 20%;
   position: relative;
   justify-content: space-around;
 }
 
-.kitty {
+.header__kitty {
   position: absolute;
   height: 230px;
   width: 165px;
@@ -260,7 +264,7 @@
   transition: background-image 0.2s ease, left 0.3s linear both;
 }
 
-.kitty:hover {
+.header__kitty:hover {
   background-image: url("../images/kittypaw.png");
   left: 7px;
   transition: background-image 0.2s ease, left 0.3s linear both;

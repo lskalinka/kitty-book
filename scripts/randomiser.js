@@ -3,7 +3,7 @@ let remainingTexts = []; // Массив для невыданных элеме�
 let isClicked = false; // Флаг для отслеживания клика
 
 const button = document.querySelector('.randomiser__button');
-const icon = document.querySelector('.icon'); // Получаем элемент иконки
+const icon = document.querySelector('.randomiser__icon'); // Получаем элемент иконки
 const textElement = document.querySelector('.randomiser__text'); // Получаем элемент текста
 const sign = document.querySelector('.randomiser__sign'); // Получаем элемент подписи
 
@@ -32,6 +32,8 @@ fetch('texts.txt')
 // Обработчик наведения мыши
 button.addEventListener('mouseenter', function () {
   if (!isClicked) {
+    sign.style.opacity = '0';
+    button.classList.add('hide-after');
     icon.classList.add('hover'); // Увеличиваем иконку при наведении
   }
 });
@@ -45,7 +47,7 @@ button.addEventListener('mouseleave', function () {
     setTimeout(() => {
       sign.style.opacity = '1'; // Показываем подпись
       button.classList.remove('hide-after'); // Убираем класс для псевдоэлемента
-    }, 250); // Задержка должна совпадать с длительностью уменьшения иконки
+    }, 100); // Задержка должна совпадать с длительностью уменьшения иконки
   }
 });
 
