@@ -26,6 +26,17 @@
   text-decoration: none;
 }
 
+.link:focus::before {
+  bottom: 0;
+  height: 100%;
+}
+
+.link:focus {
+  box-shadow: none;
+  border: 1px solid #787e98;
+  outline: none;
+}
+
 .link::before {
   content: "";
   position: absolute;
@@ -73,6 +84,9 @@
 }
 
 .header__list-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   list-style: "\1F63C";
   padding-left: 16px;
 }
@@ -110,6 +124,13 @@
   align-self: flex-end;
   z-index: 2;
   transition: background-image 0.2s ease, left 0.3s linear both;
+  background-color: transparent;
+  border: none;
+}
+
+.header__kitty:focus {
+  box-shadow: none;
+  outline: none;
 }
 
 .header__kitty:hover {
@@ -201,6 +222,12 @@
   transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
   cursor: pointer;
 }
+
+.randomiser__button:focus {
+  box-shadow: 0 0 40px 0 rgba(99, 80, 87, 1);
+  outline: none;
+}
+
 .randomiser__button::after {
   content: "";
   position: absolute;
@@ -213,14 +240,17 @@
   transition-delay: 0.15s;
   transition: left 0.15s ease, opacity 0.15s ease;
 }
+
 .randomiser__button.hide-after::after {
   left: -72%;
   opacity: 0;
 }
+
 .randomiser__button:hover::after {
   left: -72%;
   opacity: 0;
 }
+
 .randomiser__sign {
   position: relative;
   display: inline-block;
@@ -237,6 +267,7 @@
   transition-delay: 0.15s;
   opacity: 1;
 }
+
 .randomiser__icon {
   position: absolute;
   top: 0;
@@ -247,6 +278,7 @@
   width: 28%;
   transition: width 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
+
 .randomiser__update {
   height: 36px;
   margin: auto;
@@ -254,23 +286,29 @@
   vertical-align: middle;
   transition: transform 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
+
 .randomiser__button:hover .randomiser__icon .randomiser__update {
   transform: scale(1.5) translateY(-3px);
 }
+
 .randomiser__button:hover .randomiser__sign {
   left: -72%;
   opacity: 0;
 }
+
 .randomiser__button:hover .randomiser__icon {
   width: 100%;
 }
+
 .randomiser__icon.rotate {
   transform: rotate(360deg);
   transition: transform 1.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
+
 .randomiser__icon.hover .randomiser__update {
   transform: scale(1.5) translateY(-3px);
 }
+
 .randomiser__icon.hover {
   width: 100%;
 }
