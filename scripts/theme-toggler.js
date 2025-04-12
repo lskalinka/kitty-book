@@ -88,34 +88,34 @@ class Sphere {
   }
 
   attachHoverEvents() {
-    kitty.addEventListener('mouseenter', () => {
+    const activateHoverEffect = () => {
         if (!this.isAnimating) {
             kitty.style.backgroundImage = "url('./images/kittypaw.png')";
-            kitty.style.left = '7px'; // Изменение позиции при наведении
+            kitty.style.left = '7px';
         }
-    });
+    };
 
-    kitty.addEventListener('mouseleave', () => {
+    const deactivateHoverEffect = () => {
         if (!this.isAnimating) {
             kitty.style.backgroundImage = "url('./images/kitty.png')";
-            kitty.style.left = '10px'; // Возврат к исходной позиции
+            kitty.style.left = '10px';
         }
-    });
+    };
 
-    this.parts.sphere.addEventListener('mouseenter', () => {
-        if (!this.isAnimating) {
-            kitty.style.backgroundImage = "url('./images/kittypaw.png')";
-            kitty.style.left = '7px'; // Изменение позиции при наведении
-        }
-    });
+    // Добавим tabindex, чтобы можно было фокусироваться с клавиатуры
+    kitty.setAttribute('tabindex', '0');
 
-    this.parts.sphere.addEventListener('mouseleave', () => {
-        if (!this.isAnimating) {
-            kitty.style.backgroundImage = "url('./images/kitty.png')";
-            kitty.style.left = '10px'; // Возврат к исходной позиции
-        }
-    });
+    // Наведение и фокус на kitty
+    kitty.addEventListener('mouseenter', activateHoverEffect);
+    kitty.addEventListener('mouseleave', deactivateHoverEffect);
+    kitty.addEventListener('focus', activateHoverEffect);
+    kitty.addEventListener('blur', deactivateHoverEffect);
+
+    // Наведение и фокус на сферу
+    this.parts.sphere.addEventListener('mouseenter', activateHoverEffect);
+    this.parts.sphere.addEventListener('mouseleave', deactivateHoverEffect);
 }
+
 
     attachClickEvent(sphere) {
         sphere.addEventListener("click", () => this.startAnimation());

@@ -131,6 +131,7 @@
 .header__kitty:focus {
   box-shadow: none;
   outline: none;
+  border: none;
 }
 
 .header__kitty:hover {
