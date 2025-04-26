@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/themes.css" />
     <link rel="preload" href="../images/kittypaw.png" as="image" />
     <link rel="shortcut icon" href="./images/favicon.png" type="image/png" />
     <title>Книжка-котишка</title>
@@ -30,7 +32,13 @@
         </nav>
       </section>
       <div class="header__themetoggler">
-        <button class="header__kitty"></button>
+        <div class="header__kitty"
+     role="button"
+     tabindex="0"
+     aria-label="Анимация кота"
+     aria-pressed="false">
+</div>
+
         <div class="header__toy">
           <div class="header__sphere">
             <div class="header__line"></div>
@@ -41,8 +49,8 @@
     <main class="main section">
       <section class="randomiser section">
         <div class="randomiser__block">
-          <div class="randomiser__text">
-            <p class="randomiser__text-content"></p>
+          <div class="randomiser__text" tabindex="-1">
+            <p class="randomiser__text-content" tabindex="-1"></p>
           </div>
           <a
             class="randomiser__button"

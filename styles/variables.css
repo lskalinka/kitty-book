@@ -3,5 +3,17 @@
   --bg-color: #f3ebe9;
   --accent-color: #787e98;
   --additional-color: #aea4b1;
-  --main-font: "Arsenal";
+  --additional-color50: #aea4b17F;
+  --main-color30: #6350574C;
+  --main-font: "Arsenal", sans-serif;
+}
+
+:root.dark-theme {
+  --main-color: #ebf1ff;
+  --bg-color: #22283c;
+  --accent-color: #a0bcbe;
+  --additional-color: #4f6471;
+  --additional-color50: #4f64717F;
+  --main-color30: #ebf1ff4C;
+  --main-font: "Arsenal", sans-serif;
 }

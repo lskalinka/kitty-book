@@ -1,0 +1,38 @@
+.page {
+  background-color: var(--bg-color);
+  color: var(--main-color);
+}
+
+.link:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.link::before {
+  background-color: var(--additional-color50);
+}
+
+.section:not(:last-child)::after {
+  border-bottom: 5px double var(--accent-color);
+}
+
+.header__line {
+  background-color: var(--accent-color);
+}
+
+.randomiser__button {
+  border: solid 3px var(--main-color);
+  box-shadow: 0 0 20px 0 var(--main-color30);
+  background-color: var(--bg-color);
+}
+
+.randomiser__button:focus {
+  box-shadow: 0 0 40px 0 var(--main-color);
+}
+
+.randomiser__button::after {
+  background-color: var(--main-color);
+}
+
+.randomiser__update {
+  fill: var(--main-color);
+}

@@ -4,6 +4,9 @@
     "cheerio": "^1.0.0-rc.12",
     "jquery": "^3.7.1",
     "node-fetch": "^3.3.2",
-    "puppeteer": "^21.3.6"
+    "puppeteer": "^24.6.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
   }
 }

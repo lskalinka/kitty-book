@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  font-family: Arsenal;
+  font-family: var(--main-font);
 }
 
 h1,
@@ -30,4 +30,21 @@ a {
 
 img {
   width: 100%;
+}
+
+.page,
+.link:focus,
+.link::before,
+.section:not(:last-child)::after,
+.header__line,
+.randomiser__button,
+.randomiser__button:focus,
+.randomiser__button::after,
+.randomiser__update {
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease,
+    fill 0.5s ease;
 }
